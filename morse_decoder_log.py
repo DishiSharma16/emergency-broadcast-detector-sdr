@@ -29,7 +29,7 @@ def ensure_csv():
 ensure_csv()
 
 # ============================================================
-# Load WAV from GNU Radio
+# Loading WAV from GNU Radio
 # ============================================================
 sr, audio = wav.read("morse_rx.wav")
 audio = audio.astype(float)
@@ -106,9 +106,7 @@ else:
 
     decoded = decoded.strip()
 
-    # -----------------------------------------------
-    # Extra numerical features for ML
-    # -----------------------------------------------
+
     avg_dot = float(np.mean(dur_on[labels == dot_cluster])) if np.any(labels == dot_cluster) else 0
     avg_dash = float(np.mean(dur_on[labels == dash_cluster])) if np.any(labels == dash_cluster) else 0
     avg_gap = float(np.mean(dur_off)) if len(dur_off) > 0 else 0
